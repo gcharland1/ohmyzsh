@@ -174,7 +174,7 @@ shrink_path () {
                                 (( i++ ))
                                 part+=$dir[$i]
                                 expn=($(echo ${part}*(-/)))
-                                (( short )) && [[ $i -ge $((length - ellen)) ]] && break
+                                (( short )) && [[ $part != "." && $i -ge $((length - ellen)) ]] && break
                         done
 
                         typeset -i dif=$(( ${#dir} - ${#part} - ellen ))
